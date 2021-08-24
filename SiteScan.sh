@@ -1,17 +1,5 @@
 #!/bin/bash
 
-# This script
-# Ask if you want to be anonymous,verify if nipe is installed, and if not, install is.
-# Will give you the option to add sites to crawl
-# Download the site to a folder on your computer
-# If the script gets to the same site again, thanks to a hash list it will only check the new files on the site (if any)
-# Check through keywords which sites are linked yo your site, and add them to the list
-# Search for hidden information using strings, exiftool and binwalk
-# If the script finds a hidden file, it will export it to a separate folder and carve it using DD
-# Alerts about new information save all the info into a log files
-# Will run until you break it, although the list of sites that will be added will probably not end ;)
-
-
 ############Varbs###########
 StartPath=$ChoosePath/Web-down
 LogPath=$ChoosePath/Web-down/Logs
