@@ -13,29 +13,25 @@
 
 
 ############Varbs###########
-ChoosePath=/home/kali
 StartPath=$ChoosePath/Web-down
-SitePATH=$ChoosePath/Web-down/List-of-sites/site.list
-InfoPATH=$ChoosePath/Web-down/Sites
 LogPath=$ChoosePath/Web-down/Logs
+InfoPATH=$ChoosePath/Web-down/Sites
+SitePATH=$ChoosePath/Web-down/List-of-sites/site.list
 ############Varbs###########
 
 function CREATION() { #create the directores for each site 
 	
 
-	cd $ChoosePath
-	if [ ! -d Web-down ]; then ##create pro2
+cd $ChoosePath
+if [ ! -d Web-down ]; then ##create pro2
 	sudo mkdir Web-down
-	fi
+fi
 	cd Web-down
-	
-	
-	if [[ ! -d List-of-sites ]]; then ##create List-of-sites
+if [[ ! -d List-of-sites ]]; then ##create List-of-sites
 	mkdir List-of-sites
-	
 	cd List-of-sites
 	
-	##create all the files
+##create all the files
 	sudo bash -c 'echo "https://hezbollah.org/" > site.list'
 	sudo chmod 777 site.list 2>/dev/null
 	echo "www.alaraby.co.uk" >> site.list
@@ -45,27 +41,24 @@ function CREATION() { #create the directores for each site
 	sudo chmod 777 all-add-https-sites 2>/dev/null
 	###
 	cd ../
-	fi
-	
-	if [[ ! -d Sites ]]; then ##create Sites
+fi
+if [[ ! -d Sites ]]; then ##create Sites
 	mkdir Sites
-	fi
-	
-	if [[ ! -d HASHES ]]; then ##create Sites
+fi
+if [[ ! -d HASHES ]]; then ##create Sites
 	mkdir HASHES
-	fi
-	
-	if [[ ! -d Logs ]]; then ##create Notes
+fi
+if [[ ! -d Logs ]]; then ##create Notes
 	mkdir Logs	
-	fi
+fi
 
-						###Resets the files
-			cd Logs 
-			sudo bash -c 'echo ""------------------$(date)------------------"" >> GeneralInfo.log'
-			sudo chmod 777 all-add-http-sites 2>/dev/null
-			sudo bash -c 'echo ""------------------$(date)------------------"" >> Tools.log'
-			sudo chmod 777 all-add-https-sites 2>/dev/null
-						###
+				###Resets the files
+	cd Logs 
+	sudo bash -c 'echo ""------------------$(date)------------------"" >> GeneralInfo.log'
+	sudo chmod 777 all-add-http-sites 2>/dev/null
+	sudo bash -c 'echo ""------------------$(date)------------------"" >> Tools.log'
+	sudo chmod 777 all-add-https-sites 2>/dev/null
+				###
 
 cd $StartPath
 
@@ -95,21 +88,21 @@ sleep 1
 	echo "just kidding.. :P" 
 	sleep 1
 	read -p "Do you want to enter a path to the place the informaition wiil be save (y/n) [Default -- /home/kali] " YesNo
-	if [ $YesNo = y ];then 
+if [ $YesNo = y ];then 
 		read -p "What is your path ? " ChoosePath
-	fi
+fi
 	
 	#read -p "Select the recursive level for the web downloads. 1-Most limited, 5-Most extensive? " RecursiveLevel
 	#read -p "Select the rate limit for the web downloads (in KB.. 100, 200, 300, 400, etc? " RateLimit
 	
 	read -p "Do you want to add different file types to search in the site beyond: [*]jpg, jpeg, png, gif, pdf, exe[*] ?(y/n) " YesNo
-	if [ $YesNo = y ];then 
+if [ $YesNo = y ];then 
 		read -p "What is the file types ? " DiffrentFileType
-	fi
+fi
 	
 	
 	
-	echo "Do you wont to add website for scanning to the list? (y/n)"; read YesNo
+echo "Do you wont to add website for scanning to the list? (y/n)"; read YesNo
 	
 	if [ $YesNo == y ]; then
 	echo "Do you want to write the sites(1), or the file is preloaded on the computer(2)?"; read onetwo #ask if the user want to write to link the path to the sites
@@ -135,7 +128,7 @@ sleep 1
 	
 	
 	
-	read -p "Do you want to add the site the sctipt find to the list of sites? (y/n) " AddSiteAsnwer
+read -p "Do you want to add the site the sctipt find to the list of sites? (y/n) " AddSiteAsnwer
 CREATION
 }
 
@@ -167,8 +160,6 @@ function KEYWORD22() { #strings all the content of the hidden files
 	user
 	credential
 	credentials
-	flag
-	gmail
 	walla
 	israel
 	kill
